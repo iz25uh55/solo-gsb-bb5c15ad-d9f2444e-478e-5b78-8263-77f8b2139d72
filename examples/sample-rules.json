@@ -1,0 +1,15 @@
+{
+  "name": "demo-policy-set",
+  "rules": [
+    {"id": "v4-core", "cidr": "10.0.0.0/8", "action": "permit", "priority": 100, "source": "team-a"},
+    {"id": "v4-dc", "cidr": "10.10.0.0/16", "action": "deny", "priority": 200, "source": "team-b"},
+    {"id": "v4-dc-mgmt", "cidr": "10.10.8.0/22", "action": "permit", "priority": 300, "source": "team-c"},
+    {"id": "v4-same-deny", "cidr": "10.10.8.0/22", "action": "deny", "priority": 300, "source": "team-d"},
+    {"id": "v4-dead", "cidr": "10.10.9.0/24", "action": "deny", "priority": 50, "source": "legacy"},
+    {"id": "v4-partial", "cidr": "10.10.128.0/17", "action": "permit", "priority": 150, "source": "team-e"},
+    {"id": "v4-partial-sub", "cidr": "10.10.128.0/18", "action": "deny", "priority": 250, "source": "team-f"},
+    {"id": "v6-core", "cidr": "2001:db8::/32", "action": "permit", "priority": 100, "source": "team-a"},
+    {"id": "v6-block", "cidr": "2001:db8:1::/48", "action": "deny", "priority": 200, "source": "team-b"},
+    {"id": "v4-other", "cidr": "192.0.2.0/24", "action": "permit", "priority": 10, "source": "team-g"}
+  ]
+}
